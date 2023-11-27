@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace M9PVND_Hajo.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     [ApiController]
     public class Boatkontroller : ControllerBase
     {
@@ -17,4 +17,5 @@ namespace M9PVND_Hajo.Controllers
 
             return Ok(kérdések);
         }
+    }
 }
