@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script src="JavaScript.js"></script>
 </head>
 <body>
     <div id="külső">
@@ -10,12 +11,11 @@
             Kérdés szövege
         </div>
 
-        <div id="középső">
-            <div id="válaszok">
-                <div id="válasz1" class="kerdes">Válasz 1</div>
-                <div id="válasz2" class="kerdes">Válasz 2</div>
-                <div id="válasz3" class="kerdes">Válasz 3</div>
-            </div>
+        <div id="válaszok">
+            <div id="válasz1" class="kerdes kattintható">Válasz 1</div>
+            <div id="válasz2" class="kerdes kattintható">Válasz 2</div>
+            <div id="válasz3" class="kerdes kattintható">Válasz 3</div>
+        </div>
             <div id="kép">
                 <img id="kép1" src="https://kzgzdiag426.blob.core.windows.net/netcore/teszt-0050.jpg" />
             </div>
@@ -26,33 +26,6 @@
         </div>
     </div>
     <style>
-        div {
-            margin: 10px;
-            border: 1px solid fuchsia
-        }
-
-        #külső {
-        }
-
-        #kérdés_szöveg {
-        }
-
-        #középső {
-        }
-
-        #válaszok {
-        }
-
-        #vezérlő {
-        }
-
-        #kép {
-        }
-
-        .gomb {
-        }
-
-        .kerdes {
-        }
+        @import url('style.css');
     </style>
 </body>
