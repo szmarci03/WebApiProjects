@@ -9,6 +9,18 @@ namespace M9PVND_Hajo.Controllers
     public class Boatkontroller : ControllerBase
     {
         [HttpGet]
+        [Route("questions/count")]
+
+        public int M1()
+        {
+            HajosContext hajosContext = new HajosContext();
+            int kerdesekszam = hajosContext.Questions.Count();
+            return kerdesekszam;
+        }
+
+
+
+        [HttpGet]
         [Route("questions/{sorszám}")]
         public ActionResult M2(int sorszám)
         {
@@ -21,5 +33,7 @@ namespace M9PVND_Hajo.Controllers
 
             return new JsonResult(kérdés);
         }
+
+
     }
 }
