@@ -1,8 +1,10 @@
 ﻿var hotlist = [];
 var questionsInHotList = 3;
-var displayedQuestion = 0;
+var displayedQuestion;
 var numberOfQuestions;
 var nextQuestion = 1;
+
+document.addEventListener("DOMContentLoaded",init)
 
 function init() {
 	for (let i = 0; i < questionsInHotList; i++) {
@@ -39,12 +41,17 @@ function kérdésBetöltés(questionnumber, destination) {
 			hotlist[destination].question = data;
 			hotlist[destination].goodanswers = 0;
 			console.log(`A ${questionnumber}. kérdés letöltődött a hotlist ${destination}. helyére`);
+
+			if (displayedQuestion === undefined && destination === 0) {
+				displayedQuestion = 0;
+				kérdésMegjelenít();
+			}
 		})
 }
 
 function kérdésMegjelenít() {
 	let kérdés = hotlist[displayedQuestion].question;
-	document.getElementById(`kérdés_szöveg`).innerHTML = kérdés.question1;
+	document.getElementById(`kérdés_szöveg`).innerText = kérdés.question1;
 	document.getElementById("válasz1").innerText = kérdés.answer1;
 	document.getElementById("válasz2").innerText = kérdés.answer2;
 	document.getElementById("válasz3").innerText = kérdés.answer3;
@@ -58,4 +65,19 @@ function kérdésMegjelenít() {
 	}
 }
 
+function előre() {
+	displayedQuestion++;
+	if (displayedQuestion == questionsInHotList) {
+		displayedQuestion = 0;
+	}
+	kérdésMegjelenít();
+}
+
+function hátra() {
+	displayedQuestion--;
+	if (displayedQuestion < 0) {
+		displayedQuestion = questionsInHotList-1;
+	}
+	kérdésMegjelenít();
+}
   
